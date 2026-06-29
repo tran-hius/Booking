@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZMnIIXDzEds=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\Booking\\Booking\\Booking.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.17\\microsoft.aspnetcore.openapi.9.0.17.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\npgsql\\10.0.3\\npgsql.10.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
