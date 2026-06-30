@@ -33,7 +33,7 @@ namespace Booking.Config
             }
         }
 
-        public static NpgsqlConnection GetConnection()
+        public NpgsqlConnection GetConnection()
         {
             return new NpgsqlConnection(_connectionString);
         }

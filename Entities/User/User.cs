@@ -69,15 +69,17 @@ public class User
     public void VerifyEmail()
     {
         EnsureNotDeleted();
-        if(Status == UserStatus.Active)
+
+        if (Status == UserStatus.Active)
         {
-            throw new Exception("Tài khoản này đã được xác thực");
+            throw new Exception("Tài khoản này đã được xác thực rồi.");
         }
 
-        if(Status == UserStatus.Banned)
+        if (Status == UserStatus.Banned)
         {
-            throw new InvalidOperationException("Tài khoản đã bị khóa");
+            throw new InvalidOperationException("Tài khoản đã bị khóa, không thể xác thực.");
         }
+
         Status = UserStatus.Active;
         Touch();
     }
@@ -155,7 +157,7 @@ public class User
     private void EnsureUserIsActive()
     {
         EnsureNotDeleted();
-        if (Status == UserStatus.Inactive || Status == UserStatus.Banned)
+        if (Status == UserStatus.Pending || Status == UserStatus.Inactive || Status == UserStatus.Banned)
         {
             throw new Exception("Không thể thực hiện thao tác này trên tài khoản không hoạt động.");
         }

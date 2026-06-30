@@ -33,3 +33,4 @@ C:\Users\Admin\source\repos\Booking\Booking\obj\Debug\net9.0\refint\Booking.dll
 C:\Users\Admin\source\repos\Booking\Booking\obj\Debug\net9.0\Booking.pdb
 C:\Users\Admin\source\repos\Booking\Booking\obj\Debug\net9.0\Booking.genruntimeconfig.cache
 C:\Users\Admin\source\repos\Booking\Booking\obj\Debug\net9.0\ref\Booking.dll
+C:\Users\Admin\source\repos\Booking\Booking\obj\Debug\net9.0\Booking.sourcelink.json
