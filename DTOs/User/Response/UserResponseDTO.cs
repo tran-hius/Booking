@@ -9,9 +9,11 @@ namespace Booking.DTOs.User.Response
         public string Email { get; set; } = string.Empty;
         public string FullName { get; set; } = string.Empty;
         public string PhoneNumber { get; set; } = string.Empty;
-        public Role Role { get; set; }
+        public int Role { get; set; }
         public UserStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+
+        public DateTime? DeletedAt { get; set; }
     }
 }

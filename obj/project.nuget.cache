@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ZMnIIXDzEds=",
+  "dgSpecHash": "oqc+6o/q6zc=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\Booking\\Booking\\Booking.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.17\\microsoft.aspnetcore.openapi.9.0.17.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",

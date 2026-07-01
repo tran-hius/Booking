@@ -21,11 +21,19 @@
             }
             catch (Exception ex)
             {
-                _logger.LogError(
-                    ex,
-                    "Unhandled exception occurred while processing {Method} {Path}",
-                    context.Request.Method,
-                    context.Request.Path);
+                if (ex is ArgumentException || ex is InvalidOperationException || ex is KeyNotFoundException)
+                {
+                    _logger.LogWarning("Business error: {Message} | {Method} {Path}",
+                        ex.Message,
+                        context.Request.Method,
+                        context.Request.Path);
+                }
+                else
+                {
+                    _logger.LogError(ex, "Unhandled server exception occurred while processing {Method} {Path}",
+                        context.Request.Method,
+                        context.Request.Path);
+                }
                 await HandleExceptionAsync(context, ex);
             }
         }

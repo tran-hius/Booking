@@ -1,5 +1,6 @@
 ﻿using Booking.Entities.User;
 using Booking.Entities.User.User;
+namespace Booking.Entities.User.User;
 
 public class User
 {
@@ -135,22 +136,6 @@ public class User
     public bool IsGuest()
     {
         return Role == Role.Guest;
-    }
-
-    public void SoftDelete()
-    {
-        if (DeletedAt.HasValue) return;
-        DeletedAt = DateTime.UtcNow;
-        Status = UserStatus.Inactive;
-        Touch();
-    }
-
-    public void Restore()
-    {
-        if (!DeletedAt.HasValue) return;
-        DeletedAt = null;
-        Status = UserStatus.Active;
-        Touch();
     }
 
     //Đảm bảo tài khoản đang hoạt động

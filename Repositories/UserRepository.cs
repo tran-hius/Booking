@@ -203,5 +203,43 @@ namespace Booking.Repositories
 
             await cmd.ExecuteNonQueryAsync();
         }
+
+        public async Task Update(User user)
+        {
+            await using var conn = _database.GetConnection();
+            await EnsureOpenConnectionAsync(conn);
+
+            const string sql = """
+                UPDATE users
+                SET
+                    email = @email,
+                    password_hash = @password_hash,
+                    role = @role,
+                    full_name = @full_name,
+                    phone_number = @phone_number,
+                    status = @status,
+                    updated_at = @updated_at
+                WHERE id = @id
+                  AND deleted_at IS NULL;
+                """;
+
+            await using var cmd = new NpgsqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("id", user.Id);
+            cmd.Parameters.AddWithValue("email", user.Email);
+            cmd.Parameters.AddWithValue("password_hash", user.PasswordHash);
+            cmd.Parameters.AddWithValue("role", (int)user.Role);
+            cmd.Parameters.AddWithValue("full_name", user.FullName ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("phone_number", user.PhoneNumber ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("status", (int)user.Status);
+            cmd.Parameters.AddWithValue("updated_at", DateTime.UtcNow);
+
+            var affectedRows = await cmd.ExecuteNonQueryAsync();
+
+            if (affectedRows == 0)
+            {
+                throw new Exception($"Không thể update user id = {user.Id} (có thể đã bị xóa hoặc không tồn tại).");
+            }
+        }
     }
 }
