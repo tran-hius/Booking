@@ -93,5 +93,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Booking.Controllers.UserController",
+    "Method": "VerifyEmail",
+    "RelativePath": "api/user/verify-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Booking.DTOs.User.Request.VerifyEmailDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

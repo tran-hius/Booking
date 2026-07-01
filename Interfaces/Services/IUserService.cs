@@ -10,7 +10,7 @@ namespace Booking.Interfaces.Services
         Task<IEnumerable<UserResponseDTO>> GetAllUsersAsync();
         Task<User?> GetUserByIdAsync(int id);
         Task<User?> GetUserByEmailAsync(string email);
-        Task VerifyEmailAsync(string email);
+        Task VerifyEmailAsync(string email, string otp);
         Task<UserResponseDTO> UpdateUserAsync(int id, UpdateUserDTO request);
         Task SoftDeleteUserAsync(int id);
         Task RestoreUserAsync(int id);

@@ -56,5 +56,16 @@ namespace Booking.Controllers
             await _userService.RestoreUserAsync(id);
             return Ok(new { message = "Khôi phục tài khoản người dùng thành công." });
         }
+
+        [HttpPost("verify-email")]
+        public async Task<IActionResult> VerifyEmail([FromBody] VerifyEmailDTO request)
+        {
+            await _userService.VerifyEmailAsync(request.Email, request.Otp);
+
+            return Ok(new
+            {
+                message = "Xác thực tài khoản thành công."
+            });
+        }
     }
 }
